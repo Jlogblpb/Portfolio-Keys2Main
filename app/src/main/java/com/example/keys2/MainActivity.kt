@@ -111,7 +111,6 @@ class MainActivity : AppCompatActivity() {
                         editComment.text =
                             "Искомый адрес не найден, попробуйте изменить условия поиска!" +
                                     " Обратите внимание, что корпус вводится через пробел!!!"
-
                     }
                 }
                 cursor.close()
@@ -137,7 +136,9 @@ class MainActivity : AppCompatActivity() {
                 btnSave.isEnabled = true
                 btnCancel.isEnabled = true
                 btnFind.isEnabled = false
-                if ("Искомый адрес не найден, попробуйте изменить условия поиска! Обратите внимание, что корпус вводится через пробел!!!" == editComment.text.toString()) {
+                if ("Искомый адрес не найден, попробуйте изменить условия поиска!" +
+                    " Обратите внимание, что корпус вводится через пробел!!!" ==
+                    editComment.text.toString()) {
                     editComment.text = ""
                 }
             } else {
