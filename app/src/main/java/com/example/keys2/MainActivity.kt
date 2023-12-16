@@ -108,7 +108,6 @@ class MainActivity : AppCompatActivity() {
                             break
                         }
                     } else {
-//                    if (strForDel == "")
                         editComment.text =
                             "Искомый адрес не найден, попробуйте изменить условия поиска!" +
                                     " Обратите внимание, что корпус вводится через пробел!!!"
@@ -265,22 +264,6 @@ class MainActivity : AppCompatActivity() {
                 //home[j] = ((cursor.getString(cursor.getColumnIndex(DBHelper.HOUSE_COL))))
             }
             val streets = street.distinct()
-            //val homes = home.distinct()
-
-            //Сортируем пузырьком дома в массиве homes
-//            var anyper: String
-//            var ggk:Int
-//            for (j in 0..homes.size){
-//                ggk=0
-//                for (i in 0..homes.size - 2){
-//                    if (homes[i] > homes[i+1]){
-//                        ggk++
-//                        swap(homes, i,i+1)
-//                    }
-//                }
-//                if (ggk == 0)
-//                    break
-//            }
 
             // Получаем ссылку на элемент AutoCompleteTextView в разметке
             val streetScr = findViewById<AutoCompleteTextView>(R.id.autoCompleteStreet)
@@ -289,13 +272,6 @@ class MainActivity : AppCompatActivity() {
             val adapter = ArrayAdapter(this , android.R.layout.simple_list_item_1 , streets)
             (streetScr as AutoCompleteTextView?)?.setAdapter(adapter)
 
-//            // Получаем ссылку на элемент AutoCompleteTextView в разметке
-//            val homeScr = findViewById<AutoCompleteTextView>(R.id.autoCompleteHome)
-//
-//            //Пишем адаптер
-//            val adapterH = ArrayAdapter(this , android.R.layout.simple_list_item_1 , homes)
-//            (homeScr as AutoCompleteTextView?)?.setAdapter(adapterH)
-//            cursor.close()
         } else {
             val editComment: EditText = findViewById(R.id.editComment)
             editComment.setText("База адресов и ключей пуста!" + "\n" + "Добавьте перую запись!")
